@@ -86,6 +86,10 @@ a:visited {
     padding-top: 9px;
 }
 
+.tab-content {
+    width: 100%
+}
+
 .nav-pills .nav-link {
     color: var(--black)
 }
@@ -144,6 +148,10 @@ a:visited {
     font-variant: normal;
     font-weight: 500;
     line-height: 26.4px;
+}
+
+.tool {
+    padding-right: 5px;
 }
 
 .occupation {
