@@ -150,6 +150,12 @@ a:visited {
     color: var(--primary);
 }
 
+.occupation-note {
+    color: var(--link-hover);
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
 .card-avatar {
     display: grid;
     place-items: center;
