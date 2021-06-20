@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: white;
+    --black: #1E1E1E;
+    --primary: #4EC9B0;
+    --secondary: #569CD6;
+    --link: #a0a08c;
+    --link-hover: #555555;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    font-family: Ubuntu;
+}
+
+h1 {
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    color: var(--primary)
+}
+
+h3 {
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 15.4px;
+}
+
+p {
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--black);
+}
+
+blockquote {
+    font-size: 21px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+pre {
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 18.5714px;
+}
+
+a:link {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--link);
+}
+
+.nav-tabs {
+    border-bottom: 0px solid transparent;
+}
+
+.tab-pane {
+    padding-top: 9px;
+}
+
+.tab-content {
+    width: 100%
+}
+
+
+/* .nav-pills .nav-link {
+    color: var(--black)
+} */
+
+
+/* .nav-link:hover {
+    color: var(--link)
+} */
+
+
+/* .nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: transparent;
+    color: var(--primary)
+} */

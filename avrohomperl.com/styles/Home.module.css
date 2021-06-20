@@ -1,0 +1,140 @@
+.main {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    border-radius: 0.75rem;
+    box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+    background: var(--black);
+    color: var(--background);
+    max-width: 500px;
+    border: solid var(--black);
+    border-width: .25em;
+}
+
+.card_footer {
+    width: 100%;
+}
+
+.menuIcon {
+    width: 15px;
+    float: right;
+    color: var(--link-hover);
+}
+
+.menuIcon:hover {
+    color: var(--primary)
+}
+
+.under_card {
+    max-height: 20px;
+    min-height: 20px;
+    height: 20px;
+}
+
+.under_item {
+    color: var(--link);
+}
+
+.under_item:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.card_details {
+    padding: 1rem;
+}
+
+.card_content {
+    background-color: var(--background);
+    color: var(--black);
+    /* display: none; */
+}
+
+.card_content:last-child {
+    border-radius: 0.50rem;
+}
+
+.name {
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+.tool {
+    padding-right: 5px;
+}
+
+.logo {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.occupation {
+    color: var(--primary);
+}
+
+.occupation_note {
+    color: var(--link-hover);
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
+.card_avatar {
+    display: grid;
+    place-items: center;
+}
+
+.card_about {
+    margin-top: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    .value {
+        font-size: 1rem;
+    }
+    .label {
+        margin-top: 0.15rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.75rem;
+    .label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+    .value {
+        margin-top: 0.15rem;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+}
