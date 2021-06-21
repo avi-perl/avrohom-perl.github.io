@@ -1,0 +1,7 @@
+.PortfolioIcon {
+    width: 16px;
+}
+
+.PortfolioPill.active {
+    background-color: red;
+}
