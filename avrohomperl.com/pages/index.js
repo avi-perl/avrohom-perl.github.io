@@ -14,17 +14,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tab from "react-bootstrap/Tab";
 import Collapse from "react-bootstrap/Collapse";
 
-import PortfolioInformation from "../Components/PortfolioInformation"
+import PortfolioInformation from "../Components/PortfolioInformation";
+import MiniCard from "../Components/MiniCard";
 
 export default function Home() {
-
   const [cardContentOpen, setOpen] = useState(false);
 
   let menuArrow;
   if (!cardContentOpen) {
-    menuArrow = <FontAwesomeIcon icon={faChevronCircleDown} />
+    menuArrow = <FontAwesomeIcon icon={faChevronCircleDown} />;
   } else {
-    menuArrow = <FontAwesomeIcon icon={faChevronCircleUp} />
+    menuArrow = <FontAwesomeIcon icon={faChevronCircleUp} />;
   }
 
   return (
@@ -39,56 +39,52 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className="moving-card">
-          <div className={styles.card}>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-sm-4 d-flex justify-content-center">
-                  <img
-                    alt="My Logo"
-                    className={styles.logo}
-                    src="logo-small.png"
-                  />
-                </div>
-                <div className="col-sm-8">
-                  <div className={styles.card_details}>
-                    <div className={styles.name}>Avi Perl</div>
-                    <div className={styles.occupation}>
-                      Developer
-                      <span className={styles.occupation_note}>
-                        # Current ➔ TransUnion
+          <MiniCard>
+            <div className="row no-gutters">
+              <div className={"col-sm-4 " + styles.logo}>
+                <img
+                  alt="My Logo"
+                  className={styles.logo}
+                  src="logo-small.png"
+                />
+              </div>
+              <div className="col-sm-8">
+                <div className={styles.card_details}>
+                  <div className={styles.name}>Avi Perl</div>
+                  <div className={styles.occupation}>
+                    Developer
+                    <span className={styles.occupation_note}>
+                      # Current ➔ TransUnion
+                    </span>
+                  </div>
+                  <div className={styles.card_about}>
+                    <div className={styles.item}>
+                      <a className="antiphonespam">516[antiphonespam]9370</a>
+                      <a className="antiemailspam">
+                        info[antiemailspam]avrohomperl.com
+                      </a>
+                    </div>
+                  </div>
+                  <div id="skills" className={styles.skills}>
+                    <Collapse in={!cardContentOpen}>
+                      <span className={styles.value}>
+                        Python & PHP developer focused on web development,
+                        obsessed with automation, and passionate about
+                        application architecture.
                       </span>
-                    </div>
-                    <div className={styles.card_about}>
-                      <div className={styles.item}>
-                        <a className="antiphonespam">516[antiphonespam]9370</a>
-                        <a className="antiemailspam">
-                          info[antiemailspam]avrohomperl.com
-                        </a>
-                      </div>
-                    </div>
-                    <div id="skills" className={styles.skills}>
-                      <Collapse in={!cardContentOpen}>
-                        <span className={styles.value}>
-                          Python & PHP developer focused on web development,
-                          obsessed with automation, and passionate about
-                          application architecture.
-                        </span>
-                      </Collapse>
-                    </div>
+                    </Collapse>
                   </div>
                 </div>
               </div>
             </div>
             <Collapse in={cardContentOpen}>
-              <div className={"card-footer " + styles.card_content}>
-                <div id="example-collapse-text">
-                  <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                    <PortfolioInformation />
-                  </Tab.Container>
+              <div className={styles.card_content}>
+                <div className="p-2">
+                  <PortfolioInformation />
                 </div>
               </div>
             </Collapse>
-          </div>
+          </MiniCard>
           <div className={styles.card_footer}>
             <div
               className={styles.menuIcon}
