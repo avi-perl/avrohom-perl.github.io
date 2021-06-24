@@ -27,8 +27,8 @@ class TabContent {
   }
 }
 
-class MiniNav extends React.Component {
-  state = [
+function PortfolioInformation({href}) {
+  var state = [
     new TabContent(
       "contact",
       <FontAwesomeIcon icon={faComment} />,
@@ -82,9 +82,8 @@ class MiniNav extends React.Component {
     ),
   ];
 
-  defaultActiveKey = "photo";
+  var defaultActiveKey = "photo";
 
-  render() {
     return (
       <Tab.Container>
         <Row>
@@ -92,7 +91,7 @@ class MiniNav extends React.Component {
             <Nav 
             variant="tabs"
             defaultActiveKey="contact">
-              {this.state.map((data, index) => (
+              {state.map((data, index) => (
                 <Nav.Item>
                   <Nav.Link
                     href={"#" + data.key}
@@ -107,7 +106,7 @@ class MiniNav extends React.Component {
           </Col>
           <Col sm={10}>
             <Tab.Content>
-              {this.state.map((data) => (
+              {state.map((data) => (
                 <Tab.Pane eventKey={data.key}>
                   <h1> {data.title} </h1> {ReactHtmlParser(data.content)}
                 </Tab.Pane>
@@ -117,7 +116,6 @@ class MiniNav extends React.Component {
         </Row>
       </Tab.Container>
     );
-  }
 }
 
-export default MiniNav;
+export default PortfolioInformation;
