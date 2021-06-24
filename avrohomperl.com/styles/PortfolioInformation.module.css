@@ -2,6 +2,12 @@
     width: 16px;
 }
 
-.PortfolioPill.active {
+.nav-link .nav-pills .nav-link.active,
+.nav-pills .show>.nav-lin {
     background-color: red;
+}
+
+.miniNav:active {
+    background-color: var(--black);
+    color: white;
 }

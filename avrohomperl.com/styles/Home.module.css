@@ -66,21 +66,12 @@
 }
 
 .card_content:last-child {
-    border-radius: 0.50rem;
-}
-
-.mini_nav {
-    display: inline-block;
+    border-radius: 0.30rem;
 }
 
 .mini_nav_item {
     max-width: 10px;
     /* display: inline-block; */
-}
-
-.nav.nav-tabs .nav-link.active {
-    background-color: var(--black);
-    color: white;
 }
 
 .name {

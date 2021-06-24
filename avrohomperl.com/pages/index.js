@@ -59,10 +59,8 @@ export default function Home() {
                   </div>
                   <div className={styles.card_about}>
                     <div className={styles.item}>
-                      <a className="antiphonespam">516[antiphonespam]9370</a>
-                      <a className="antiemailspam">
-                        info[antiemailspam]avrohomperl.com
-                      </a>
+                    <a href='tel&#58;516&#50;56&#37;393&#55;&#48;'>&#53;&#49;6&#46;256&#46;&#57;37&#48;</a>
+                      <a href='m&#97;&#105;lt&#111;&#58;in%6&#54;o&#64;avr%&#54;Fh&#37;6Fmperl&#46;c&#111;m'>&#105;nfo&#64;a&#118;r&#111;homperl&#46;&#99;om</a>
                     </div>
                   </div>
                   <div id="skills" className={styles.skills}>
