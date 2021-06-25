@@ -1,4 +1,7 @@
+import { useRouter } from "next/router";
+
 import React from "react";
+import { useCallback } from "react";
 import styles from "../styles/PortfolioInformation.module.css";
 import {
   faComment,
@@ -9,9 +12,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactHtmlParser from "react-html-parser";
 import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 
 class TabContent {
   constructor(
@@ -27,8 +32,8 @@ class TabContent {
   }
 }
 
-function PortfolioInformation({href}) {
-  var state = [
+function PortfolioInformation() {
+  const state = [
     new TabContent(
       "contact",
       <FontAwesomeIcon icon={faComment} />,
@@ -82,40 +87,51 @@ function PortfolioInformation({href}) {
     ),
   ];
 
-  var defaultActiveKey = "photo";
+  const router = useRouter();
+  var activeKey = router.query.tab;
 
-    return (
-      <Tab.Container>
-        <Row>
-          <Col sm={2}>
-            <Nav 
-            variant="tabs"
-            defaultActiveKey="contact">
-              {state.map((data, index) => (
-                <Nav.Item>
-                  <Nav.Link
-                    href={"#" + data.key}
-                    eventKey={data.key}
-                    className={styles.PortfolioPill}
-                  >
-                    <div className={styles.PortfolioIcon}> {data.icon} </div>
-                  </Nav.Link>
-                </Nav.Item>
-              ))}
-            </Nav>
-          </Col>
-          <Col sm={10}>
-            <Tab.Content>
-              {state.map((data) => (
-                <Tab.Pane eventKey={data.key}>
-                  <h1> {data.title} </h1> {ReactHtmlParser(data.content)}
-                </Tab.Pane>
-              ))}
-            </Tab.Content>
-          </Col>
-        </Row>
-      </Tab.Container>
+  function updateActiveKey(newKey) {
+    activeKey = newKey;
+    router.push(
+      {
+        pathname: "/",
+        query: { tab: newKey },
+      },
+      undefined,
+      { shallow: true }
     );
+  }
+
+  return (
+    <Tab.Container activeKey={activeKey} defaultActiveKey={state[0].key}>
+      <Row>
+        <Col sm={2}>
+          <Nav>
+            {state.map((data) => (
+              <Nav.Item>
+                <Nav.Link
+                  eventKey={data.key}
+                  className={styles.PortfolioPill}
+                  onSelect={() => updateActiveKey(data.key)}
+                >
+                  <div className={styles.PortfolioIcon}> {data.icon} </div>
+                </Nav.Link>
+              </Nav.Item>
+            ))}
+          </Nav>
+        </Col>
+        <Col sm={10}>
+          <Tab.Content>
+            {state.map((data) => (
+              <Tab.Pane eventKey={data.key}>
+                <h1> {data.title} </h1> {ReactHtmlParser(data.content)}
+              </Tab.Pane>
+            ))}
+          </Tab.Content>
+        </Col>
+      </Row>
+    </Tab.Container>
+  );
 }
 
 export default PortfolioInformation;

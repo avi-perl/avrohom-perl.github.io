@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import {
@@ -19,7 +20,7 @@ import MiniCard from "../Components/MiniCard";
 
 export default function Home() {
   const [cardContentOpen, setOpen] = useState(false);
-
+  
   let menuArrow;
   if (!cardContentOpen) {
     menuArrow = <FontAwesomeIcon icon={faChevronCircleDown} />;
