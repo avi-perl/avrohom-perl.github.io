@@ -89,6 +89,7 @@ function PortfolioInformation() {
 
   const router = useRouter();
   var activeKey = router.query.tab;
+
   // Make sure the tab passed is real
   var valid_tab_keys = [];
   state.forEach((x, i) => valid_tab_keys.push(x.key));
@@ -114,8 +115,9 @@ function PortfolioInformation() {
         <Col sm={2}>
           <Nav>
             {state.map((data) => (
-              <Nav.Item>
+              <Nav.Item key={data.key}>
                 <Nav.Link
+                  key={data.key}
                   eventKey={data.key}
                   className={styles.PortfolioPill}
                   onSelect={() => updateActiveKey(data.key)}
@@ -129,7 +131,7 @@ function PortfolioInformation() {
         <Col sm={10}>
           <Tab.Content>
             {state.map((data) => (
-              <Tab.Pane eventKey={data.key}>
+              <Tab.Pane eventKey={data.key} key={data.key}>
                 <h1> {data.title} </h1> {ReactHtmlParser(data.content)}
               </Tab.Pane>
             ))}
