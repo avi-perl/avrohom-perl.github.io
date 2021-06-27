@@ -91,6 +91,19 @@
     object-fit: contain;
 }
 
+.tmpLogo {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.tmpLogoGrey {
+    color: var(--link-hover)
+}
+
+.tmpLogoWords {
+    color: var(--secondary)
+}
+
 .occupation {
     color: var(--primary);
 }

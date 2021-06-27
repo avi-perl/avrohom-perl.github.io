@@ -59,13 +59,18 @@ export default function Home() {
             <div className="row no-gutters">
               <div className={"col-sm-4 " + styles.logo}>
                 <div className="d-none d-sm-block">
-                  <Image
+                  {/* <Image
                     alt="My Logo"
                     className={styles.logo}
                     width="133px"
                     height="133px"
                     src="/../public/logo-small.png"
-                  />
+                  /> */}
+                  <div className={styles.tmpLogo}>
+                    <span className={styles.tmpLogoGrey}>&#60;</span>
+                    <span className={styles.tmpLogoWords}>avi</span>{" "}
+                    <span className={styles.tmpLogoGrey}>/></span>
+                  </div>
                 </div>
               </div>
               <div className="col-sm-8">
