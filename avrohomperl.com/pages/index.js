@@ -38,7 +38,7 @@ export default function Home() {
 
   let menuArrow;
   if (!cardContentOpen) {
-    menuArrow = <FontAwesomeIcon icon={faChevronCircleDown} />;
+    menuArrow = <FontAwesomeIcon icon={faChevronCircleDown} className={styles.pulse} />;
   } else {
     menuArrow = <FontAwesomeIcon icon={faChevronCircleUp} />;
   }

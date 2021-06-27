@@ -30,8 +30,30 @@
     width: 100%;
 }
 
+@keyframes pulse-red {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 var(--link-hover);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
+}
+
+.pulse {
+    border-radius: 50%;
+    animation: pulse-red 2s infinite;
+    width: 16px;
+}
+
 .menuIcon {
-    width: 15px;
+    padding-top: 5px;
+    width: 16px;
     float: right;
     color: var(--link-hover);
 }
