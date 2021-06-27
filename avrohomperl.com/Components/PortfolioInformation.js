@@ -5,7 +5,7 @@ import styles from "../styles/PortfolioInformation.module.css";
 import {
   faComment,
   faBriefcase,
-  faTools,
+  faCode,
   faCamera,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,73 +15,60 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 
-class TabContent {
-  constructor(
-    key = "first",
-    icon = <FontAwesomeIcon icon={faBriefcase} />,
-    title = "Title goes here",
-    content = "<strong>Big</strong> HTML goes here"
-  ) {
-    this.key = key;
-    this.icon = icon;
-    this.title = title;
-    this.content = content;
-  }
-}
-
 function PortfolioInformation() {
   const state = [
-    new TabContent(
-      "contact",
-      <FontAwesomeIcon icon={faComment} />,
-      "Chat With Me",
-      "<p>I'm happy to have a no-pressure conversation, please feel free to reach out with any sort of question.</p>"
-    ),
-    new TabContent(
-      "hire",
-      <FontAwesomeIcon icon={faBriefcase} />,
-      "Hire Me",
-      "<p>Yes, I would love to talk to you about a contracting opportunity! If I am not a match for your project, I'll try to make a referral.</p><h3>Services</h3><p>Website Development • API Development • Web Scraping • Data Manipulation &amp; ETL • Process Automation</p>"
-    ),
-    new TabContent(
-      "tools",
-      <FontAwesomeIcon icon={faTools} />,
-      "My Toolkit",
-      `<div class="row">
-          <div class="col">
-              <h3>What I'm proficient with</h3>
-              <p class="m-0">PHP • Python • Bash</p>
-              <hr class="m-0">
-              <p class="m-0">HTML • CSS • JS</p>
-              <hr class="m-0">
-              <p class="m-0">Django • Flask • FastAPI</p>
-              <hr class="m-0">
-              <p class="m-0">Database Design • SQL</p>
-          </div>
-          <div class="col">
-              <h3>What I'm learning</h3>
-              <p class="m-0">AWS</p>
-              <hr class="m-0">
-              <p class="m-0">Node • React • Vue</p>
-          </div>
-      </div>`
-    ),
-    new TabContent(
-      "photo",
-      <FontAwesomeIcon icon={faCamera} />,
-      "Commercial Photography",
-      `<p>
-        I am currently limiting my photography services as I focus on my family and
-        software development.
-      </p>
-      <p>Please look up my friends who do amazing work:</p>
-      <a href="http://hudigreenberger.com/" target="none">Hudi Greenberger</a>
-      <br />
-      <a href="https://www.yechielorgel.com/" target="none">Yechiel Orgel</a>
-      <br />
-      <a href="https://www.ellteephoto.com/" target="none">Levi Teitlebaum</a>
-      `
-    ),
+    {
+      key: "contact",
+      icon: <FontAwesomeIcon icon={faComment} />,
+      title: "Chat With Me",
+      content: `<p>I'm happy to have a no-pressure conversation, please feel free to reach out with any sort of question.</p>`,
+    },
+    {
+      key: "hire",
+      icon: <FontAwesomeIcon icon={faBriefcase} />,
+      title: "Hire Me",
+      content: `<p>Yes, I would love to talk to you about a contracting opportunity! If I am not a match for your project, I'll try to make a referral.</p>
+            <h3>Services</h3>
+            <p>Website Development • API Development • Web Scraping • Data Manipulation &amp; ETL • Process Automation</p>`,
+    },
+    {
+      key: "tools",
+      icon: <FontAwesomeIcon icon={faCode} />,
+      title: "My Toolkit",
+      content: `<div class="row">
+                        <div class="col">
+                            <h3>What I'm proficient with</h3>
+                            <p class="m-0">PHP • Python • Bash</p>
+                            <hr class="m-0">
+                            <p class="m-0">HTML • CSS • JS</p>
+                            <hr class="m-0">
+                            <p class="m-0">Django • Flask • FastAPI</p>
+                            <hr class="m-0">
+                            <p class="m-0">Database Design • SQL</p>
+                        </div>
+                        <div class="col">
+                            <h3>What I'm learning</h3>
+                            <p class="m-0">AWS</p>
+                            <hr class="m-0">
+                            <p class="m-0">Node • React • Vue</p>
+                        </div>
+                    </div>`,
+    },
+    {
+      key: "photo",
+      icon: <FontAwesomeIcon icon={faCamera} />,
+      title: "Commercial Photography",
+      content: `<p>
+                        I am currently limiting my photography services as I focus on my family and
+                        software development.
+                      </p>
+                      <p>Please look up my friends who do amazing work:</p>
+                      <a href="http://hudigreenberger.com/" target="none">Hudi Greenberger</a>
+                      <br />
+                      <a href="https://www.yechielorgel.com/" target="none">Yechiel Orgel</a>
+                      <br />
+                      <a href="https://www.ellteephoto.com/" target="none">Levi Teitlebaum</a>`,
+    },
   ];
 
   const router = useRouter();
@@ -109,7 +96,7 @@ function PortfolioInformation() {
   return (
     <Tab.Container activeKey={activeKey} defaultActiveKey={state[0].key}>
       <Row>
-        <Col sm={2}>
+        <Col sm={2} className="pb-sm-0 pb-2">
           <Nav variant="pills">
             {state.map((data) => (
               <Nav.Link
@@ -128,7 +115,7 @@ function PortfolioInformation() {
           <Tab.Content>
             {state.map((data) => (
               <Tab.Pane eventKey={data.key} key={data.key}>
-                <h1> {data.title} </h1> {ReactHtmlParser(data.content)}
+                <h1 className="pb-1"> {data.title} </h1> {ReactHtmlParser(data.content)}
               </Tab.Pane>
             ))}
           </Tab.Content>
