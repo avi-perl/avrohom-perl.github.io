@@ -14,6 +14,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tab from "react-bootstrap/Tab";
 import Collapse from "react-bootstrap/Collapse";
+import Image from "next/image";
 
 import PortfolioInformation from "../Components/PortfolioInformation";
 import MiniCard from "../Components/MiniCard";
@@ -23,11 +24,15 @@ export default function Home() {
   const [cardContentOpen, setOpen] = useState(false);
 
   useEffect(() => {
-    // When the name for a tab is passed, default to open. 
+    // When the name for a tab is passed, default to open.
     // When passing a tab name, explicit instruction to remain closed is required.
-    if (router.query.tab && router.query.open != "false" && window.paramSet != true) {
+    if (
+      router.query.tab &&
+      router.query.open != "false" &&
+      window.paramSet != true
+    ) {
       setOpen(true);
-      window.paramSet = true  // The expand and contract button will not work without this
+      window.paramSet = true; // The expand and contract button will not work without this
     }
   });
 
@@ -53,11 +58,15 @@ export default function Home() {
           <MiniCard>
             <div className="row no-gutters">
               <div className={"col-sm-4 " + styles.logo}>
-                <img
-                  alt="My Logo"
-                  className={styles.logo}
-                  src="logo-small.png"
-                />
+                <div className="d-none d-sm-block">
+                  <Image
+                    alt="My Logo"
+                    className={styles.logo}
+                    width="133px"
+                    height="133px"
+                    src="/../public/logo-small.png"
+                  />
+                </div>
               </div>
               <div className="col-sm-8">
                 <div className={styles.card_details}>
