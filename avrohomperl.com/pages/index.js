@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import {
   faComment,
@@ -19,8 +19,17 @@ import PortfolioInformation from "../Components/PortfolioInformation";
 import MiniCard from "../Components/MiniCard";
 
 export default function Home() {
+  const router = useRouter();
   const [cardContentOpen, setOpen] = useState(false);
-  
+
+  useEffect(() => {
+    // When the name for a tab is passed, default to open. 
+    // When passing a tab name, explicit instruction to remain closed is required.
+    if (router.query.tab && router.query.open != "false") {
+      setOpen(true);
+    }
+  });
+
   let menuArrow;
   if (!cardContentOpen) {
     menuArrow = <FontAwesomeIcon icon={faChevronCircleDown} />;
@@ -60,8 +69,12 @@ export default function Home() {
                   </div>
                   <div className={styles.card_about}>
                     <div className={styles.item}>
-                    <a href='tel&#58;516&#50;56&#37;393&#55;&#48;'>&#53;&#49;6&#46;256&#46;&#57;37&#48;</a>
-                      <a href='m&#97;&#105;lt&#111;&#58;in%6&#54;o&#64;avr%&#54;Fh&#37;6Fmperl&#46;c&#111;m'>&#105;nfo&#64;a&#118;r&#111;homperl&#46;&#99;om</a>
+                      <a href="tel&#58;516&#50;56&#37;393&#55;&#48;">
+                        &#53;&#49;6&#46;256&#46;&#57;37&#48;
+                      </a>
+                      <a href="m&#97;&#105;lt&#111;&#58;in%6&#54;o&#64;avr%&#54;Fh&#37;6Fmperl&#46;c&#111;m">
+                        &#105;nfo&#64;a&#118;r&#111;homperl&#46;&#99;om
+                      </a>
                     </div>
                   </div>
                   <div id="skills" className={styles.skills}>
