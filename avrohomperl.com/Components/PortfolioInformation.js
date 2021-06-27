@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 
 import React from "react";
-import { useCallback } from "react";
 import styles from "../styles/PortfolioInformation.module.css";
 import {
   faComment,
@@ -12,11 +11,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactHtmlParser from "react-html-parser";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
 
 class TabContent {
   constructor(
@@ -113,18 +110,17 @@ function PortfolioInformation() {
     <Tab.Container activeKey={activeKey} defaultActiveKey={state[0].key}>
       <Row>
         <Col sm={2}>
-          <Nav>
+          <Nav variant="pills">
             {state.map((data) => (
-              <Nav.Item key={data.key}>
-                <Nav.Link
-                  key={data.key}
-                  eventKey={data.key}
-                  className={styles.PortfolioPill}
-                  onSelect={() => updateActiveKey(data.key)}
-                >
-                  <div className={styles.PortfolioIcon}> {data.icon} </div>
-                </Nav.Link>
-              </Nav.Item>
+              <Nav.Link
+                as="btn"
+                key={data.key}
+                eventKey={data.key}
+                className={styles.PortfolioPill}
+                onSelect={() => updateActiveKey(data.key)}
+              >
+                <div className={styles.PortfolioIcon}> {data.icon} </div>
+              </Nav.Link>
             ))}
           </Nav>
         </Col>
