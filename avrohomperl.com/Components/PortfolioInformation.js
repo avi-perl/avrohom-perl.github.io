@@ -22,7 +22,7 @@ function PortfolioInformation() {
       icon: <FontAwesomeIcon icon={faComment} />,
       title: "Chat With Me",
       content: `<p>
-                  I'm happy to have a commitment-free conversation, please reach out with any general questions, requests for help, or to inquire about <a href="/?tab=hire">working with me.</a>
+                  I love to talk about programming, I'd be happy to have a commitment-free conversation 🙂. Please reach out with any general questions, requests for help, or to inquire about <a href="/?tab=hire">working with me.</a>
                 </p>`,
     },
     {
