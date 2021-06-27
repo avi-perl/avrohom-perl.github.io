@@ -89,6 +89,12 @@ function PortfolioInformation() {
 
   const router = useRouter();
   var activeKey = router.query.tab;
+  // Make sure the tab passed is real
+  var valid_tab_keys = [];
+  state.forEach((x, i) => valid_tab_keys.push(x.key));
+  if (!valid_tab_keys.includes(activeKey)) {
+    activeKey = undefined;
+  }
 
   function updateActiveKey(newKey) {
     activeKey = newKey;
