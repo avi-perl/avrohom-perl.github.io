@@ -67,9 +67,9 @@ export default function Home() {
                     src="/../public/logo-small.png"
                   /> */}
                   <div className={styles.tmpLogo}>
-                    <span className={styles.tmpLogoGrey}>&#60;</span>
+                    <span className={styles.tmpLogoGrey}>&lt;</span>
                     <span className={styles.tmpLogoWords}>avi</span>{" "}
-                    <span className={styles.tmpLogoGrey}>/></span>
+                    <span className={styles.tmpLogoGrey}>/&gt;</span>
                   </div>
                 </div>
               </div>
