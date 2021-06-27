@@ -25,8 +25,9 @@ export default function Home() {
   useEffect(() => {
     // When the name for a tab is passed, default to open. 
     // When passing a tab name, explicit instruction to remain closed is required.
-    if (router.query.tab && router.query.open != "false") {
+    if (router.query.tab && router.query.open != "false" && window.paramSet != true) {
       setOpen(true);
+      window.paramSet = true  // The expand and contract button will not work without this
     }
   });
 
