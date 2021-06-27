@@ -21,7 +21,9 @@ function PortfolioInformation() {
       key: "contact",
       icon: <FontAwesomeIcon icon={faComment} />,
       title: "Chat With Me",
-      content: `<p>I'm happy to have a no-pressure conversation, please feel free to reach out with any sort of question.</p>`,
+      content: `<p>
+                  I'm happy to have a commitment-free conversation, please reach out with any general questions, requests for help, or to inquire about <a href="/?tab=hire">working with me.</a>
+                </p>`,
     },
     {
       key: "hire",
@@ -59,10 +61,10 @@ function PortfolioInformation() {
       icon: <FontAwesomeIcon icon={faCamera} />,
       title: "Commercial Photography",
       content: `<p>
-                        I am currently limiting my photography services as I focus on my family and
+                        I am currently limiting my photography services as I focus on family and
                         software development.
                       </p>
-                      <p>Please look up my friends who do amazing work:</p>
+                      <p>For your commercial photography needs, I highly recommend these friends of mine:</p>
                       <a href="http://hudigreenberger.com/" target="none">Hudi Greenberger</a>
                       <br />
                       <a href="https://www.yechielorgel.com/" target="none">Yechiel Orgel</a>
