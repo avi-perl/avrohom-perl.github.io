@@ -100,7 +100,7 @@ export default function Home() {
             </div>
             <Collapse in={cardContentOpen}>
               <div className={styles.card_content}>
-                <div className="p-2">
+                <div className={"p-2 " + styles.cardHeight}>
                   <PortfolioInformation />
                 </div>
               </div>

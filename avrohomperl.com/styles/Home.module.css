@@ -87,6 +87,10 @@
     /* display: none; */
 }
 
+.cardHeight {
+    min-height: 250px;
+}
+
 .card_content:last-child {
     border-radius: 0.30rem;
 }
