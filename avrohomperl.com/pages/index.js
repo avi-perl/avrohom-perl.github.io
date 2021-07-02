@@ -81,8 +81,8 @@ export default function Home() {
                       <a href="tel&#58;516&#50;56&#37;393&#55;&#48;">
                         &#53;&#49;6&#46;256&#46;&#57;37&#48;
                       </a>
-                      <a target="none" href="m&#97;&#105;lt&#111;&#58;avi+sitelink&#64;avr%&#54;Fh&#37;6Fmperl&#46;c&#111;m">
-                        avi&#64;a&#118;r&#111;homperl&#46;&#99;om
+                      <a target="none" href="m&#97;&#105;lt&#111;&#58;avi+sitelink&#64;a&#118;iperl&#46;me">
+                        avi&#64;a&#118;iperl&#46;me
                       </a>
                     </div>
                   </div>
