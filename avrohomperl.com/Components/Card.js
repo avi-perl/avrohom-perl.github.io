@@ -23,8 +23,14 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardContentOpen: true,
+      cardContentOpen: false,
     };
+  }
+
+  componentDidMount() {
+    if (this.props.router.query.tab) {
+      this.setState({ cardContentOpen: true });
+    }
   }
 
   render() {
