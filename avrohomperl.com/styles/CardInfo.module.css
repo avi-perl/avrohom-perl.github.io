@@ -1,0 +1,56 @@
+.name {
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+.occupation {
+    color: var(--primary);
+}
+
+.occupation_note {
+    color: var(--link-hover);
+    padding-left: 15px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card_about {
+    margin-top: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    .value {
+        font-size: 1rem;
+    }
+    .label {
+        margin-top: 0.15rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.75rem;
+    .label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+    .value {
+        margin-top: 0.15rem;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+}

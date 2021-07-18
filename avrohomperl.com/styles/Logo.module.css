@@ -1,0 +1,26 @@
+/* .logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100%;
+    object-fit: contain;
+} */
+
+.tmpLogo {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.tmpLogoGrey {
+    color: var(--link-hover);
+}
+
+.tmpLogoWords {
+    color: var(--secondary);
+}
