@@ -78,7 +78,6 @@
 .cardContent {
     background-color: var(--background);
     color: var(--black);
-    min-width: 480px;
 }
 
 .cardContent:last-child {
