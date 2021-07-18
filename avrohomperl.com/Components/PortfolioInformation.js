@@ -65,11 +65,11 @@ function PortfolioInformation() {
                         software development.
                       </p>
                       <p>For your commercial photography needs, I highly recommend these friends of mine:</p>
-                      <a href="http://hudigreenberger.com/" target="none">Hudi Greenberger</a>
-                      <br />
-                      <a href="https://www.yechielorgel.com/" target="none">Yechiel Orgel</a>
-                      <br />
-                      <a href="https://www.ellteephoto.com/" target="none">Levi Teitlebaum</a>`,
+                      <a href="http://hudigreenberger.com/" target="none">Hudi G</a>
+                      <span style="color: grey">&nbsp&nbsp&nbsp//&nbsp&nbsp&nbsp</span>
+                      <a href="https://www.yechielorgel.com/" target="none">Yechiel O</a>
+                      <span style="color: grey">&nbsp&nbsp&nbsp//&nbsp&nbsp&nbsp</span>
+                      <a href="https://www.ellteephoto.com/" target="none">Levi T</a>`,
     },
   ];
 
@@ -117,7 +117,8 @@ function PortfolioInformation() {
           <Tab.Content>
             {state.map((data) => (
               <Tab.Pane eventKey={data.key} key={data.key}>
-                <h1 className="pb-1"> {data.title} </h1> {ReactHtmlParser(data.content)}
+                <h1 className="pb-1"> {data.title} </h1>{" "}
+                {ReactHtmlParser(data.content)}
               </Tab.Pane>
             ))}
           </Tab.Content>
