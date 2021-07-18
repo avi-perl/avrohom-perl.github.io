@@ -17,12 +17,10 @@ function MyApp({ Component, pageProps }) {
     };
 
     // Add chat
-    if (process.env.SMALL_CHAT_ENABLED === 'true') {
-      const chatTag = document.createElement("script");
-      chatTag.src = "https://embed.small.chat/T028BAWJTRBC028BBS72G5.js";
-      chatTag.async = true;
-      document.body.appendChild(chatTag);
-    }
+    const chatTag = document.createElement("script");
+    chatTag.src = "https://embed.small.chat/T028BAWJTRBC028BBS72G5.js";
+    chatTag.async = true;
+    document.body.appendChild(chatTag);
 
     //When the component is mounted, subscribe to router changes
     //and log those page views
