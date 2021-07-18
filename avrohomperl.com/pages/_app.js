@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
     };
 
     // Add chat
-    if (process.env.SMALL_CHAT_ENABLED) {
+    if (process.env.SMALL_CHAT_ENABLED === 'true') {
       const chatTag = document.createElement("script");
       chatTag.src = "https://embed.small.chat/T028BAWJTRBC028BBS72G5.js";
       chatTag.async = true;
