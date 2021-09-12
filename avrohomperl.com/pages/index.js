@@ -1,14 +1,29 @@
+import React from "react";
+import { withRouter } from "next/router";
+
 import Card from "../Components/Card";
 
 import styles from "../styles/Index.module.css";
 import PortfolioInformation from "../Components/PortfolioInformation"
 
-export default function Admin() {
-  return (
-    <Card>
-      <div className={styles.cardHeight}>
-        <PortfolioInformation />
-      </div>
-    </Card>
-  );
+class Index extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            cardContentOpen: false,
+        };
+    }
+
+    render() {
+        return (
+            <Card cardContentOpen={this.state.cardContentOpen}>
+                <div className={styles.cardHeight}>
+                    <PortfolioInformation/>
+                </div>
+            </Card>
+        );
+    }
 }
+
+export default withRouter(Index);
