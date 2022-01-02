@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,14 +22,8 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardContentOpen: false,
+      cardContentOpen: (this.props.cardContentOpen ? this.props.cardContentOpen : false),
     };
-  }
-
-  componentDidMount() {
-    if (this.props.router.query.tab) {
-      this.setState({ cardContentOpen: true });
-    }
   }
 
   render() {

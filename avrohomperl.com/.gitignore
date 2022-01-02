@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+/.idea/.gitignore
+/.idea/avrohomperl.com.iml
+/.idea/aws.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml

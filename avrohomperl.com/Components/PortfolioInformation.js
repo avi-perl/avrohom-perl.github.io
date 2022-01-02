@@ -50,7 +50,7 @@ function PortfolioInformation() {
                         </div>
                         <div class="col">
                             <h3>What I'm learning</h3>
-                            <p class="m-0">AWS</p>
+                            <p class="m-0">AWS • Laravel</p>
                             <hr class="m-0">
                             <p class="m-0">Node • React • Vue</p>
                         </div>
