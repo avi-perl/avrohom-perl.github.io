@@ -10,7 +10,7 @@ class CardInfo extends React.Component {
         <div className={styles.name}>Avi Perl</div>
         <div className={styles.occupation}>
           Developer
-          <span className={styles.occupation_note}># Current ➔ TransUnion</span>
+          {/*<span className={styles.occupation_note}># Current ➔ TransUnion</span>*/}
         </div>
         {(() => {
           if (!this.props.hideContactInfo) {
